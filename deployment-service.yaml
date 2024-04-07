@@ -199,6 +199,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -212,6 +213,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3001
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -225,6 +227,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3002
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -238,6 +241,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3003
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -251,6 +255,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3004
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -264,6 +269,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3005
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -277,6 +283,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3006
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -290,6 +297,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3007
+  type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -303,3 +311,4 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3008
+  type: LoadBalancer
