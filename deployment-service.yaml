@@ -1,0 +1,305 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-frontend
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-user-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-service
+  template:
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-product-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mailing-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mailing-service
+  template:
+    metadata:
+      labels:
+        app: mailing-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-mailing-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-order-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-order-service
+  template:
+    metadata:
+      labels:
+        app: user-order-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-user-order-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopping-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopping-service
+  template:
+    metadata:
+      labels:
+        app: shopping-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-shopping-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-service
+  template:
+    metadata:
+      labels:
+        app: payment-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-payment-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: queries-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: queries-service
+  template:
+    metadata:
+      labels:
+        app: queries-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-queries-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shoppingcart-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shoppingcart-service
+  template:
+    metadata:
+      labels:
+        app: shoppingcart-service
+    spec:
+      containers:
+        - name: server
+          image: ayroid/mvs-shoppingcart-service
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+spec:
+  selector:
+    app: user-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3001
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-service
+spec:
+  selector:
+    app: product-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3002
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mailing-service
+spec:
+  selector:
+    app: mailing-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3003
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-order-service
+spec:
+  selector:
+    app: user-order-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3004
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopping-service
+spec:
+  selector:
+    app: shopping-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3005
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+spec:
+  selector:
+    app: payment-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3006
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queries-service
+spec:
+  selector:
+    app: queries-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3007
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shoppingcart-service
+spec:
+  selector:
+    app: shoppingcart-service
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3008
