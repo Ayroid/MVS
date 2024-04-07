@@ -1,0 +1,66 @@
+.textAreaDiv {
+  position: relative;
+}
+
+.textArea {
+  background-color: #404053;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  width: max(25dvw, 16rem);
+  height: 2.5rem;
+  color: var(--text);
+  font-weight: 600;
+  transition: 0.1s ease-out;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+}
+
+.textArea:-webkit-autofill,
+.textArea:-webkit-autofill:hover,
+.textArea:-webkit-autofill:focus,
+.textArea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #404053 inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+
+.textArea::-webkit-scrollbar {
+  display: none;
+}
+
+.textArea:focus {
+  outline: none;
+  border-bottom: 1px solid var(--highlight);
+}
+
+.textArea::placeholder {
+  font-weight: 600;
+}
+
+.label {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  bottom: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: gray;
+  font-weight: 600;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+  padding: 0.5rem;
+}
+
+.textArea:focus + .label {
+  color: var(--highlight);
+  top: 0;
+  transform: translateY(-30%) scale(0.9);
+}
+
+.textArea:not(:placeholder-shown) + .label {
+  top: 0;
+  transform: translateY(-30%) scale(0.9);
+}

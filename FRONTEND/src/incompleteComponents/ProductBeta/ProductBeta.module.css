@@ -1,0 +1,62 @@
+.mainDiv {
+  width: 100%;
+  padding: 10rem 0;
+  height: 100dvh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.carousel {
+  max-width: 60dvw;
+  display: flex;
+  aspect-ratio: 16/9;
+  overflow-x: auto;
+  width: calc(max(20rem, 50dvw) * 1);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  transition: all 0.3s ease;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(max(20rem, 50dvw) * -3));
+  }
+}
+
+.carousel::-webkit-scrollbar,
+.mainDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.products {
+  width: max(20rem, 50dvw);
+  border-radius: 20px;
+  position: relative;
+  margin: 15rem 2rem 0 2rem;
+  filter: drop-shadow(0px -10px 20px rgba(0, 0, 0, 0.25));
+  scale: 1;
+  transition: all 0.3s ease;
+  scroll-snap-align: center;
+  object-fit: cover;
+}
+
+.active {
+  z-index: 10;
+  scale: 1.2;
+}
+
+.buttons {
+  margin: 0rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  position: absolute;
+  z-index: 15;
+  bottom: 10rem;
+}

@@ -1,0 +1,37 @@
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 0;
+  width: 60dvw;
+  max-width: 60dvw;
+}
+
+.listItem {
+  list-style: none;
+  cursor: pointer;
+  font-family: "Futura", sans-serif;
+  font-weight: 600;
+  color: var(--text);
+  user-select: none;
+  font-size: 1rem;
+}
+
+.listItem:focus,
+.listItem:active {
+  outline: none !important;
+  background: transparent !important;
+}
+
+.listItem a:hover {
+  transition: all 0.25s ease-out;
+  color: var(--highlight);
+}
+
+@media (max-width: 900px) {
+  .list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

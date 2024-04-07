@@ -1,0 +1,25 @@
+.mainDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.channelsDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7rem;
+  overflow: scroll;
+  width: 75dvw;
+  padding: 1rem 10dvw;
+}
+
+.channelsDiv::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}

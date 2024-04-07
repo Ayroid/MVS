@@ -1,0 +1,46 @@
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  padding: 1rem 0;
+}
+
+.channelIcon {
+  height: max(10rem, 15dvw);
+  width: max(10rem, 15dvw);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all ease 0.2s;
+  filter: drop-shadow(0 0 0.5rem #f5005671);
+  &:hover {
+    filter: drop-shadow(0 0 1rem #f50056c2);
+    transition: all ease 0.2s;
+  }
+}
+
+.channelText {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+}
+
+.iconsDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconsDiv img {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  filter: invert(1);
+  &:hover {
+    filter: invert(0.8);
+  }
+}

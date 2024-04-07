@@ -1,0 +1,35 @@
+.mainDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: min(2.5rem, 8dvw);
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  width: 100%;
+  text-align: left;
+}
+
+.formDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.label {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: gray;
+  font-weight: 600;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}

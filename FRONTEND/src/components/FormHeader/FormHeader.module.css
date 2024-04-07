@@ -1,0 +1,18 @@
+.heading {
+  font-size: min(2rem, 9dvw);
+  margin-bottom: -0.75rem;
+}
+
+.preHeading {
+  font-size: 1.25rem;
+  margin-bottom: 0rem;
+}
+
+.headingSpan {
+  color: var(--highlight);
+}
+
+.changePage {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}

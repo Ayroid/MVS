@@ -1,0 +1,22 @@
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+.verticalLine {
+  width: 2rem;
+  margin-bottom: 0.75rem;
+  rotate: 90deg;
+}
+
+.sideLineText {
+  font-family: "Morn", sans-serif;
+  color: var(--highlight);
+  writing-mode: vertical-lr;
+  height: 1rem;
+}

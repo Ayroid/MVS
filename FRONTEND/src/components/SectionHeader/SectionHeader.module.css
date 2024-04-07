@@ -1,0 +1,7 @@
+.heading {
+  font-size: min(2.5rem, 9dvw);
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  width: 100%;
+}

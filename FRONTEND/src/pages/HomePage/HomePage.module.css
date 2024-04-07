@@ -1,0 +1,45 @@
+.mainDiv {
+  background-color: #030303;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 90vh;
+  padding: 1rem 0;
+  color: var(--text);
+  position: relative;
+}
+
+.title {
+  font-family: "Morn", sans-serif;
+  font-size: min(6rem, 15dvw);
+  text-align: center;
+}
+
+.socialsDiv {
+  position: absolute;
+  bottom: 0;
+  left: 5dvw;
+  padding: 1rem;
+}
+
+.sidelineDiv {
+  position: absolute;
+  bottom: 7.8dvh;
+  right: 5dvw;
+}
+
+@media (max-width: 900px) {
+  .socialsDiv {
+    display: none;
+  }
+
+  .sidelineDiv {
+    right: 0.5rem;
+    bottom: 5rem;
+  }
+}
+
+.mainDiv span {
+  color: var(--highlight);
+}

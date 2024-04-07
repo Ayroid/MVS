@@ -1,0 +1,25 @@
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20dvw;
+  margin-bottom: 5rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(4, 15dvw);
+  grid-auto-rows: 15dvw;
+  grid-auto-columns: 15dvw;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .services {
+    grid-template-columns: repeat(4, 20dvw);
+    grid-auto-rows: 20dvw;
+    grid-auto-columns: 20dvw;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,102 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./FRONTEND/
+      args:
+        - IMAGE_NAME=ayroid/mvs-frontend
+    container_name: frontend
+    ports:
+      - "8000:80"
+    # environment:
+    #   - SERVER_URI=http://localhost:3000
+    #   - PORT=3000
+    #   - DEV_MONGO_URI=mongodb://mongo:27017/ecommerce
+
+  user-service:
+    build:
+      context: ./BACKENDMICROSERVICES/USER/
+    container_name: userService
+    ports:
+      - "3000:3000"
+
+  product-service:
+    build:
+      context: ./BACKENDMICROSERVICES/PRODUCT/
+    container_name: productService
+    ports:
+      - "3001:3000"
+    depends_on:
+      - user-service
+
+  mailing-service:
+    build:
+      context: ./BACKENDMICROSERVICES/MAILING/
+    container_name: mailingService
+    ports:
+      - "3002:3000"
+    depends_on:
+      - product-service
+      - user-service
+
+  user-order-service:
+    build:
+      context: ./BACKENDMICROSERVICES/USERORDER/
+    container_name: userOrderService
+    ports:
+      - "3003:3000"
+    depends_on:
+      - user-service
+      - product-service
+      - mailing-service
+
+  shopping-service:
+    build:
+      context: ./BACKENDMICROSERVICES/SHOPPING/
+    container_name: shoppingService
+    ports:
+      - "3004:3000"
+    depends_on:
+      - user-service
+      - product-service
+      - user-order-service
+
+  payment-service:
+    build:
+      context: ./BACKENDMICROSERVICES/PAYMENT/
+    container_name: paymentService
+    ports:
+      - "3005:3000"
+    depends_on:
+      - user-service
+      - product-service
+      - user-order-service
+      - shopping-service
+
+  queries-service:
+    build:
+      context: ./BACKENDMICROSERVICES/QUERIES/
+    container_name: queriesService
+    ports:
+      - "3006:3000"
+    depends_on:
+      - user-service
+      - product-service
+      - user-order-service
+      - shopping-service
+      - payment-service
+
+  shoppingcart-service:
+    build:
+      context: ./BACKENDMICROSERVICES/SHOPPINGCART/
+    container_name: shoppingCartService
+    ports:
+      - "3007:3000"
+    depends_on:
+      - user-service
+      - product-service
+      - user-order-service
+      - shopping-service
+      - payment-service
+      - queries-service

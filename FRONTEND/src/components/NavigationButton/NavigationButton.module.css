@@ -1,0 +1,14 @@
+.buttonStyle {
+  border: none;
+  color: var(--text);
+  background-color: transparent;
+  text-align: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.buttonStyle img{
+    width: 2.5rem;
+    margin-right: 0.5rem;
+}

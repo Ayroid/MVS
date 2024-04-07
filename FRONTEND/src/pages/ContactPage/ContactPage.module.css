@@ -1,0 +1,14 @@
+.mainDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 20dvw max(2rem, 5dvh) 20dvw;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .mainDiv {
+    padding-inline: 15dvw;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,18 @@
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  font-family: "Morn", sans-serif;
+  margin: 1.5rem 0;
+}
+
+.mainDiv p {
+  width: 60dvw;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.mainDiv span {
+  color: var(--highlight);
+}

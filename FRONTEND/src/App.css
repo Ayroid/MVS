@@ -1,0 +1,76 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #030303;
+  scroll-behavior: smooth;
+  color: var(--text);
+  font-family: "Morn", sans-serif;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #aaaaaa transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 50px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #888888;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+@font-face {
+  font-family: "Morn";
+  src: url("/fonts/morn/Morn Medium.ttf");
+}
+
+@font-face {
+  font-family: "Cera";
+  src: url("/fonts/cera pro/Cera Pro Medium.otf");
+}
+
+:root {
+  --highlight: #f50057;
+  --text: rgba(255, 255, 255, 0.87);
+}
+
+.navbarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.noSelection {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.allowSelection {
+  -webkit-user-select: all;
+  -khtml-user-select: all;
+  -moz-user-select: all;
+  -o-user-select: all;
+  user-select: all;
+}
